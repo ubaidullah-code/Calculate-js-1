@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chapter 12-13</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body{
+            background-color: rgb(19, 58, 58);
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: azure;
+        }
+        label{
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        button{
+            margin-top: 10px;
+        }
+         h2{
+            text-align: center;
+        }
+        #result{
+            border: 2px solid black;
+            height: 60px;
+            margin-top: 20px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            color: bisque;
+            
+        }
+        a{
+            text-decoration: none;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>chapter 12-13</h1>
+
+        <form onsubmit="return false">
+            <h2>TIME CHECK</h2>
+            <label for="timeCheck">Enter your Time</label>
+            <input  class="form-control"  type="number" id="timeCheck" maxlength="2">
+            <button class="btn btn-success" onclick="timeFound()"><a href="#result">Enter</a></button>
+            <!-- <a href="result"><button class="btn btn-success" onclick="timeFound()">enter</button></a> -->
+            <h2>check your Password</h2>
+            <label for="enterPass">Enter your Password</label>
+            <input class="form-control"  type="password" id="enterPass" placeholder="enter 8 digit password" maxlength="8">
+            <label for="recheckPass">Recheck your Password</label>
+            <input class="form-control" type="password"  id="recheckPass" placeholder="Recheck your  password" maxlength="8" >
+            <button class="btn btn-success" onclick="passFound()"><a href="#result">Check</a></button>
+            <h2>check vowel</h2>
+            <label for="checkAlpha"> Enter your Alphabets</label>
+            <input  class="form-control" type="text" id="checkAlpha" maxlength="1">
+            <button onclick="alphaFound()" class="btn btn-success"><a href="#result">check</a></button>
+            <h2>check the number </h2>
+            <label for="checkNum"> enter your number</label>
+            <input class="form-control"  type="number" id="checkNum">
+            <button class="btn btn-success" onclick="numFound()"><a href="#result">Check</a></button>
+            <h2>compare two integers</h2>
+            <label for="compNumb">Enter first number</label>
+            <input  class="form-control" type="number" id="compNumb">
+            <label for="comp2Number">Enter second number</label>
+            <input  class="form-control" type="number" id="comp2Number">
+            <button class="btn btn-success" onclick="comFound() "><a href="#result">Enter</a></button>
+            
+
+
+
+
+
+            <p id="result"></p>
+          
+        </form>
+    </div>
+
+
+
+
+        <script>
+            function comFound(){
+                let comp1Fixed = document.querySelector("#compNumb").value;
+                let comp2Fixed = document.querySelector("#comp2Number").value;
+                if((comp1Fixed === "") && (comp2Fixed === "")){
+                    document.querySelector("#result").innerHTML = "please enter your Number"
+                    return;
+                }
+                if (comp1Fixed > comp2Fixed){
+                    document.querySelector("#result").innerHTML = `The larger integer is: ${comp1Fixed}`;
+                }
+                else if (comp1Fixed < comp2Fixed){
+                   
+                     document.querySelector("#result").innerHTML =`The larger integer is: ${comp2Fixed}`;
+                }
+                else{
+                     document.querySelector("#result").innerHTML = `both integer is same : ${comp1Fixed}`;
+                   
+                }
+            }
+
+
+         function numFound(){
+                let input1 = document.querySelector("#checkNum").value;
+                if (input1 === ""){
+                    document.querySelector("#result").innerHTML = "please enter a number"
+                    return;
+                }
+                if ( input1 < 0){
+                    document.querySelector("#result").innerHTML = "Negative"
+                }
+                else if (input1 == 0){
+                    document.querySelector("#result").innerHTML = "zero"
+                }
+                else{
+                    document.querySelector("#result").innerHTML = "positive"
+                }
+                
+
+            }
+
+
+
+
+
+            function alphaFound(){
+                let alphaFixed = document.querySelector("#checkAlpha").value;
+                if (alphaFixed === ""){
+                    document.querySelector("#result").innerHTML = "please enter your alphabets.";
+                    return;
+                }
+                if((alphaFixed == "a") || (alphaFixed == "A") || (alphaFixed == "E" ) || (alphaFixed == "e" ) || (alphaFixed == "i" )|| (alphaFixed == "I" )|| (alphaFixed == "O" ) || (alphaFixed == "o" )|| (alphaFixed == "u" ) || (alphaFixed == "U" ))
+                {
+                  let result4 = document.querySelector("#result").innerHTML = "True"
+                }
+                else{
+                    let result5 = document.querySelector("#result").innerHTML = "False"
+                }
+            }
+            
+
+
+
+
+
+
+        function passFound(){
+            let checkFixed = document.querySelector("#enterPass").value;
+            let recheckFixed = document.querySelector("#recheckPass").value;
+            if ((checkFixed && recheckFixed) === "") {
+                document.getElementById('result').innerText = "Please enter your password.";
+                return;
+            }
+
+            if (checkFixed == recheckFixed){
+                let result2 = document.querySelector("#result").innerHTML = 'your password is correct'  
+                console.log(checkFixed && recheckFixed)
+            }
+            else{
+                let result3 = document.querySelector("#result").innerHTML = 'Error! password' 
+
+            }
+
+        }
+        
+        
+        
+        function timeFound(){
+                let timeFixed = document.querySelector("#timeCheck").value;
+
+                if (timeFixed === "") {
+                document.querySelector("#result").innerText = "Please enter your time.";
+                return;
+                }
+
+                if ( timeFixed <= 6  ){
+                    let result1 = document.querySelector("#result").innerHTML = 'good night'
+                }
+                else if ( timeFixed < 12){
+                    let result1 = document.querySelector("#result").innerHTML = 'good morning'  
+                }
+                else if ( timeFixed < 18){
+                    let result1 = document.querySelector("#result").innerHTML = 'good afternoon'  
+                }
+                else if ( timeFixed < 24){
+                    let result1 = document.querySelector("#result").innerHTML = 'good Evening'  
+                }
+            }
+        </script>
+
+
+
+</body>
+</html>

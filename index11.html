@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9-11</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+    body{
+        background-color: rgb(19, 58, 58);
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: azure;
+    }
+    label{
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    button{
+        margin-top: 10px;
+    }
+     h2{
+        text-align: center;
+    }
+    #result{
+        border: 2px solid black;
+        height: 60px;
+        margin-top: 20px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        color: bisque;
+        
+    }
+    a{
+        text-decoration: none;
+        color: aliceblue;
+    }
+</style>
+
+    
+   
+</head>
+<body>
+    <div class="container">
+        <h1>Chapter 9-11</h1>
+        <form onsubmit="return false" >
+            <h2>Enter city Name</h2>
+            <label for="cityName">City Name</label>
+            <input class="form-control" type="text" id="cityName">
+            <button class="btn btn-success" onclick="cityFound()" >Enter</button>
+       <h2>Enter your gender</h2>
+        <label for="genderName">Enter your Gender</label>
+        <input class="form-control" type="text" id="genderName">
+        <button class="btn btn-success" onclick="genderFound()" >Enter</button>
+   
+            <h2>Enter  traffic signal</h2>
+        <label for="roadTraffic">Road traffic signal</label>
+        <input class="form-control" type="text" id="roadTraffic">
+        <button class="btn btn-success" onclick="signalFound()" >Enter</button>
+        <h2>Check your fuel</h2>
+        <label for="remainFuel">Enter your Remaining Fuel</label>
+        <input class="form-control" type="number" id="remainFuel">
+        <button class="btn btn-success" onclick="fuelFound()" >Enter</button>
+            <h2>Check number is divisible by 3 Not</h2>
+        <label for="dividThree">Enter a number and findout that it can be divisible by 3 or Not.</label>
+        <input class="form-control" type="number"  id="dividThree">
+        <button class="btn btn-success" onclick="ubaidUllah()" >Enter</button>
+   
+            <h2>check Even or odd</h2>
+        <label for="evenGames">check your number is even or odd</label>
+        <input class="form-control" type="number"  id="evenGames">
+        <button class="btn btn-success" onclick="oddGames()" >Enter</button>
+            <h2>check temperature</h2>
+        <label for="tempHeat">check temperature</label>
+        <input class="form-control" type="number"  id="tempHeat">
+        <button class="btn btn-success" onclick="tempFound()" >Enter</button>
+    </form>
+    <a href="index3.html" target="_blank"><button class="btn btn-primary" >Next Page</button></a>
+    
+
+
+
+    <script>
+        function cityFound(){
+
+            let cityFixed = document.querySelector("#cityName").value;
+
+            if (cityFixed == "Karachi" || cityFixed == "karachi"){
+                alert("Welcome to city of lights")
+            }
+            else if (cityFixed == "Lahore" || cityFixed == "lahore"){
+                alert ("Lahore dapawa Akhter Lawa")
+            }
+            else if (cityFixed == "Islamabad" || cityFixed == "islamabad"){
+                alert ("Capital of Pakistan")
+            }
+            else if (cityFixed == "Peshawar" || cityFixed == "peshawar"){
+                alert ("The city of Flowers")
+            }
+        }
+        function genderFound(){
+            let maleFixed = document.querySelector("#genderName").value;
+            let femaleFixed = document.querySelector("#genderName").value;
+            if (maleFixed == "Male" || maleFixed == "male"){
+                alert(" Good Morning Sir")
+
+            }
+            else if (femaleFixed == "Female" || femaleFixed || "female"){
+                alert (" Good Morning Ma’am")
+            }
+        }
+        function signalFound(){
+            let redFixed = document.querySelector("#roadTraffic").value;
+            let greenFixed = document.querySelector("#roadTraffic").value;
+            let yellowFixed = document.querySelector("#roadTraffic").value;
+             
+            if (redFixed == "red" || redFixed == "Red") {
+
+                alert ("Must Stop")
+            }
+            else if (  greenFixed == "Green" || greenFixed == "green"){
+             alert ("Move now")
+            }
+           else if  (yellowFixed == "Yellow" || yellowFixed == "yellow" ){
+             alert ("Ready to move")
+           }
+        }
+        function fuelFound(){
+            let fuelFixed = document.querySelector("#remainFuel").value;
+            if (fuelFixed <= 0.25){
+                alert ("Please refill the fuel in your car")
+            }
+            else if (fuelFixed <= 20){
+                alert("fuel is more but its better to refuel your tank")
+
+            }
+            else if (fuelFixed > 20){
+                alert("Enjoy your ride")
+
+            }
+            else{
+                alert ("Not enough for long trips.")
+
+            }
+        } 
+        function ubaidUllah(){
+            let threeFixed = document.querySelector("#dividThree").value;
+            if  (threeFixed % 3 === 0){
+                alert ("The number is divisible by 3");
+                
+            }
+            else{
+                alert("The number is not divisible by 3")
+            }
+
+        }
+        function oddGames(){
+            let evenFixed = document.querySelector("#evenGames").value;
+            if (evenFixed % 2 === 0){
+                alert("even")
+
+            }
+            else {
+                alert("odd")
+            }
+        }
+        function tempFound(){
+            let tempFixed = document.querySelector("#tempHeat").value;
+            if (tempFixed > 40){
+                alert("It is too hot outside")
+
+            }
+            else if (tempFixed > 30) {
+                alert("The Weather today is Normal")
+            }
+            else if (tempFixed > 20){
+                alert("“Today’s Weather is cool")
+              }
+            else if (tempFixed >10){
+                alert("“OMG! Today’s weather is so Cool")
+              }
+              else{
+                alert ("cold")
+              }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         {
+
+let result = prompt("Guess the Number in 1 to 10");
+if (result == "5"){
+    alert ("Bingo correct answer" );
+
+}
+else if (result == "4" || result == "6"){
+    alert("Close enough to the correct answer")
+
+}
+}
+
+    </script>
+   
+</body>
+</html>

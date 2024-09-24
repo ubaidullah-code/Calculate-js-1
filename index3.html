@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body{
+            background-color: rgb(19, 58, 58);
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: azure;
+        }
+        label{
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        button{
+            margin-top: 10px;
+        }
+         h2{
+            text-align: center;
+        }
+        #result{
+            border: 2px solid black;
+            height: 60px;
+            margin-top: 20px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            color: bisque;
+            
+        }
+        a{
+            text-decoration: none;
+            color: aliceblue;
+        }
+       
+    </style>
+
+
+</head>
+<body>
+    <div class="container">
+
+        <h1>Percentage Calculator</h1>
+        <label for="input1">Marks in Subject 1:</label>
+        <input class="form-control" type="number" id="input1"><br><br>
+        
+        <label for="input2">Marks in Subject 2:</label>
+        <input class="form-control" type="number" id="input2"><br><br>
+    
+        <label for="input3">Marks in Subject 3:</label>
+        <input class="form-control" type="number" id="input3"><br><br>
+        
+        <label for="inputTotal">Total Marks:</label>
+        <input class="form-control" type="number" id="inputTotal"><br><br>
+        
+        <button class="btn btn-success" onclick="calculatePercentage()">Calculate Percentage</button>
+        
+        <p id="result"></p>
+
+        <a href="index2.html"><button class="btn btn-primary">Next Chapter</button></a>
+    </div>
+    <script>
+        function calculatePercentage() {
+            
+            let subject1 = Number( document.querySelector("#input1").value);
+            let subject2 = Number( document.querySelector("#input2").value);
+            let subject3 = Number( document.querySelector("#input3").value);
+            let totalFixed = Number( document.querySelector("#inputTotal").value);
+            
+
+            
+            const totalObtained = subject1 + subject2 + subject3;
+
+   
+            let percentage = (totalObtained / totalFixed ) * 100;
+
+            
+            document.querySelector("#result").innerText = 
+                `Total Marks Obtained: ${totalObtained} out of ${totalFixed} \n` +
+                `Percentage: ${percentage.toFixed(2)}%`;
+        }
+    </script>
+</body>
+</html>
